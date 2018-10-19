@@ -1,0 +1,50 @@
+.social {
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__item {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        font-size: 18px;
+    }
+
+    &__link {
+        display: block;
+        height: 100%;
+        font-size: 18px;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        overflow: hidden;
+
+        &_vk {
+            background-image: inline("../images/base64/vk.svg");
+
+            &:hover {
+                background-image: inline("../images/base64/vk-hover.svg");
+            }
+        }
+
+        &_fb {
+            background-image: url("https://icongr.am/simple/facebook.svg");
+
+            &:hover {
+                background-image: url("https://icongr.am/simple/facebook.svg?colored");
+            }
+        }
+
+        &_youtube {
+            background-image: url("https://icongr.am/simple/youtube.svg");
+
+            &:hover {
+                background-image: url("https://icongr.am/simple/youtube.svg?colored");
+            }
+
+        }
+    }
+}
