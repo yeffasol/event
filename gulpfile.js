@@ -7,20 +7,20 @@ const gulp = require("gulp"),
 
 var paths = {
     styles: {
-        src: 'src/styles/style.scss',
-        all: 'src/styles/**/*.scss',
-        build: 'build/css'
+        src: 'styles/style.scss',
+        all: 'styles/**/*.scss',
+        build: 'css'
     },
     html: {
         src: '*.html'
     },
     js: {
-        all: 'src/js/**/*.js',
-        build: 'build/js/'
+        all: 'js/**/*.js',
+        build: 'js/'
     },
     images: {
-        src: 'src/images/*.+(jpg|JPG|png|svg)',
-        build: 'build/images'
+        src: 'images/*.+(jpg|JPG|png|svg)',
+        build: 'images'
     }
 };
 
@@ -40,6 +40,7 @@ function styles() {
             level: 2
         }))
         .pipe(gulp.dest(paths.styles.build))
+        .pipe(browserSync.stream());
 }
 
 function scripts() {
@@ -47,12 +48,22 @@ function scripts() {
         .pipe($.uglify({
             toplevel: true
         }))
+        .pipe($.rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.js.build))
+        .pipe(browserSync.stream());
 }
 
 function watch() {
+    browserSync.init({
+        notify: false,
+        open: false,
+        server: {
+            baseDir: "./"
+        }
+    });
     gulp.watch(paths.styles.all, styles);
     gulp.watch(paths.js.all, scripts);
+    gulp.watch(paths.html.src, browserSync.reload);
 }
 
 gulp.task("default", gulp.series(gulp.parallel(styles, scripts), watch));
