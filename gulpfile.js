@@ -7,20 +7,22 @@ const gulp = require("gulp"),
 
 var paths = {
     styles: {
-        src: 'styles/style.scss',
-        all: 'styles/**/*.scss',
-        build: 'css'
+        src: 'src/styles/style.scss',
+        all: 'src/styles/**/*.scss',
+        build: 'build/css'
     },
     html: {
-        src: '*.html'
+        src: 'src/*.html',
+        index: 'index.html',
+        build: 'build'
     },
     js: {
-        src: 'js/script.js',
-        build: 'js/'
+        src: 'src/js/script.js',
+        build: 'build/js/'
     },
     images: {
-        src: 'images/*.+(jpg|JPG|png|svg)',
-        build: 'images'
+        src: 'src/images/*.+(jpg|JPG|png|svg)',
+        build: 'build/images'
     }
 };
 
@@ -40,10 +42,16 @@ function styles() {
             level: 2
         }))
         .pipe($.postcss([
+            require("postcss-assets")({
+                loadPaths: ["src/images/"]
+            }),
+            require('postcss-image-inliner')({
+                assetPaths: ['https://icongr.am']
+            }),
             require("css-mqpacker")({
                 sort: sortMediaQueries
             })
-            ]))
+        ]))
         .pipe(gulp.dest(paths.styles.build))
         .pipe(browserSync.stream());
 }
@@ -58,10 +66,20 @@ function scripts() {
         .pipe(browserSync.stream());
 }
 
- function images () {
-    gulp.src(paths.images.src)
+function images() {
+    return gulp.src(paths.images.src)
         .pipe($.tinypng('BLZpO1PPn1JhAC0IBa8ncwiTmWm93ySw'))
         .pipe(gulp.dest(paths.images.build));
+}
+
+function html() {
+    return gulp.src(paths.html.src)
+        .pipe($.fileInclude({
+            prefix: '@@',
+            basepath: 'src/templates'
+        }))
+        .pipe(gulp.dest(paths.html.build))
+        .pipe(browserSync.stream());
 }
 
 function watch() {
@@ -69,16 +87,16 @@ function watch() {
         notify: false,
         open: false,
         server: {
-            baseDir: "./"
+            baseDir: "build"
         }
     });
     gulp.watch(paths.styles.all, styles);
     gulp.watch(paths.js.all, scripts);
-    gulp.watch(paths.html.src, browserSync.reload);
+    gulp.watch(paths.html.src, html);
 }
 
-gulp.task("default", gulp.series(gulp.parallel(styles, scripts), watch));
-gulp.task("build", gulp.parallel(styles, scripts));
+gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts), watch));
+gulp.task("build", gulp.parallel(html, styles, scripts));
 
 function isMax(mq) {
     return /max-width/.test(mq);
