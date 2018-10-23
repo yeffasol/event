@@ -20,7 +20,11 @@ var paths = {
         src: 'src/js/**/*.js',
     },
     images: {
-        src: 'src/images/*.+(jpg|JPG|png|svg)',
+        src: 'src/images/*.+(jpg|JPG|png)',
+        build: 'build/images'
+    },
+    svg: {
+        src: 'src/images/**/*.svg',
         build: 'build/images'
     }
 };
@@ -71,6 +75,12 @@ function html() {
         .pipe(browserSync.stream());
 }
 
+function svg() {
+    return gulp.src(paths.svg.src)
+        .pipe($.svgmin())
+        .pipe(gulp.dest(paths.svg.build));
+}
+
 function watch() {
     browserSync.init({
         notify: false,
@@ -84,6 +94,8 @@ function watch() {
     gulp.watch(paths.html.src, html);
 }
 
+gulp.task("images", images);
+gulp.task("svg", svg);
 gulp.task("default", gulp.series(gulp.parallel(html, styles), watch));
 gulp.task("build", gulp.parallel(html, styles));
 
