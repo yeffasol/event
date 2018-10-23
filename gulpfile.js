@@ -17,7 +17,9 @@ var paths = {
         build: 'build'
     },
     js: {
-        src: 'src/js/**/*.js',
+        index: 'src/index.js',
+        all: 'src/js/**/*.js',
+        build: 'build/js/',
     },
     images: {
         src: 'src/images/*.+(jpg|JPG|png)',
@@ -59,6 +61,12 @@ function styles() {
         .pipe(browserSync.stream());
 }
 
+function scripts() {
+    return gulp.src(paths.js.all)
+        .pipe(gulp.dest(paths.js.build))
+        .pipe(browserSync.stream());
+}
+
 function images() {
     return gulp.src(paths.images.src)
         .pipe($.tinypng('BLZpO1PPn1JhAC0IBa8ncwiTmWm93ySw'))
@@ -85,19 +93,19 @@ function watch() {
     browserSync.init({
         notify: false,
         open: false,
+        tunnel: true,
         server: {
             baseDir: "build"
         }
     });
     gulp.watch(paths.styles.all, styles);
-    gulp.watch(paths.js.src, browserSync.reload);
+    gulp.watch(paths.js.all, browserSync.reload);
+    gulp.watch(paths.js.index, browserSync.reload);
     gulp.watch(paths.html.src, html);
 }
 
-gulp.task("images", images);
-gulp.task("svg", svg);
-gulp.task("default", gulp.series(gulp.parallel(html, styles), watch));
-gulp.task("build", gulp.parallel(html, styles));
+gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts), watch));
+gulp.task("build", gulp.parallel(html, styles, scripts));
 
 function isMax(mq) {
     return /max-width/.test(mq);
