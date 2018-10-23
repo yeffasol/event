@@ -17,8 +17,7 @@ var paths = {
         build: 'build'
     },
     js: {
-        src: 'src/js/script.js',
-        build: 'build/js/'
+        src: 'src/js/**/*.js',
     },
     images: {
         src: 'src/images/*.+(jpg|JPG|png|svg)',
@@ -56,16 +55,6 @@ function styles() {
         .pipe(browserSync.stream());
 }
 
-function scripts() {
-    return gulp.src(paths.js.src)
-        .pipe($.uglify({
-            toplevel: true
-        }))
-        .pipe($.rename({suffix: '.min'}))
-        .pipe(gulp.dest(paths.js.build))
-        .pipe(browserSync.stream());
-}
-
 function images() {
     return gulp.src(paths.images.src)
         .pipe($.tinypng('BLZpO1PPn1JhAC0IBa8ncwiTmWm93ySw'))
@@ -91,12 +80,12 @@ function watch() {
         }
     });
     gulp.watch(paths.styles.all, styles);
-    gulp.watch(paths.js.all, scripts);
+    gulp.watch(paths.js.src, browserSync.reload);
     gulp.watch(paths.html.src, html);
 }
 
-gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts), watch));
-gulp.task("build", gulp.parallel(html, styles, scripts));
+gulp.task("default", gulp.series(gulp.parallel(html, styles), watch));
+gulp.task("build", gulp.parallel(html, styles));
 
 function isMax(mq) {
     return /max-width/.test(mq);

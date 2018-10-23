@@ -1,5 +1,5 @@
-var doc = document,
-    root = doc.getElementsByTagName('html')[0],
+const doc = document,
+    root = document.getElementsByTagName('html')[0],
     KEYS = {
         "TAB": "9"
     };
@@ -14,5 +14,4 @@ var doc = document,
             root.classList.add("focus");
         }
     });
-
 })();
