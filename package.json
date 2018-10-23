@@ -2,14 +2,15 @@
   "name": "gulp4",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
+    "other": "gulp",
+    "prod": "gulp build",
     "dev": "webpack --watch",
-    "both": "npm-run-all --parallel start dev"
+    "webpack": "webpack",
+    "start": "npm-run-all --parallel other dev",
+    "build": "npm-run-all --parallel prod webpack"
   },
-  "author": "",
+  "author": "Marat Shaimardanov",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
