@@ -108,3 +108,8 @@ p {
         margin-bottom: 0;
     }
 }
+
+img.lazyload{
+    filter: blur(2vw);
+    transform: scale(1.05);
+}

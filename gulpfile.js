@@ -102,10 +102,11 @@ function watch() {
     gulp.watch(paths.js.all, browserSync.reload);
     gulp.watch(paths.js.index, browserSync.reload);
     gulp.watch(paths.html.src, html);
+    gulp.watch(paths.images.src, images);
 }
 
-gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts), watch));
-gulp.task("build", gulp.parallel(html, styles, scripts));
+gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, images), watch));
+gulp.task("build", gulp.parallel(html, styles, scripts, images));
 
 function isMax(mq) {
     return /max-width/.test(mq);
