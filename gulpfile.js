@@ -21,6 +21,10 @@ var paths = {
         all: 'src/js/**/*.js',
         build: 'build/js/',
     },
+    fonts: {
+        all: 'src/fonts/**/*.*',
+        build: 'build/fonts/',
+    },
     images: {
         src: 'src/images/*.+(jpg|JPG|png)',
         build: 'build/images'
@@ -67,6 +71,11 @@ function scripts() {
         .pipe(browserSync.stream());
 }
 
+function fonts() {
+    return gulp.src(paths.fonts.all)
+        .pipe(gulp.dest(paths.fonts.build))
+}
+
 function images() {
     return gulp.src(paths.images.src)
         .pipe($.tinypng('BLZpO1PPn1JhAC0IBa8ncwiTmWm93ySw'))
@@ -105,8 +114,8 @@ function watch() {
     gulp.watch(paths.images.src, images);
 }
 
-gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, images), watch));
-gulp.task("build", gulp.parallel(html, styles, scripts, images));
+gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, images, fonts), watch));
+gulp.task("build", gulp.parallel(html, styles, scripts, images, fonts));
 
 function isMax(mq) {
     return /max-width/.test(mq);
