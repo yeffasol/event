@@ -1,15 +1,3 @@
-function setEqualHeight(columns) {
-    var tallestcolumn = 0;
-    columns.each(function () {
-        var currentHeight = $(this).height();
-        console.log(currentHeight);
-        if (currentHeight > tallestcolumn) {
-            tallestcolumn = currentHeight;
-        }
-    });
-    columns.height(tallestcolumn);
-}
-
 function addPhoneMask(elements) {
     var phones = document.querySelectorAll(elements);
     Array.prototype.forEach.call(phones, function (child) {

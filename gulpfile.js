@@ -71,6 +71,15 @@ function scripts() {
         .pipe(browserSync.stream());
 }
 
+function concat() {
+    return gulp.src('src/libs')
+        .pipe($.concat('libs.js'))
+        .pipe($.uglify({
+            toplevel: true
+        }))
+        .pipe(gulp.dest('build/js'));
+}
+
 function fonts() {
     return gulp.src(paths.fonts.all)
         .pipe(gulp.dest(paths.fonts.build))
@@ -114,8 +123,8 @@ function watch() {
     gulp.watch(paths.images.src, images);
 }
 
-gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, images, fonts), watch));
-gulp.task("build", gulp.parallel(html, styles, scripts, images, fonts));
+gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, concat, images, fonts), watch));
+gulp.task("build", gulp.parallel(html, styles, scripts, concat, images, fonts));
 
 function isMax(mq) {
     return /max-width/.test(mq);

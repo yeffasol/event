@@ -8,7 +8,7 @@
     <title>Title</title>
 
     <link rel="preload" href="fonts/SFDisplay/SFDisplayRegular.woff2" as="font" type="font/woff2" crossorigin="">
-<style>
+    <style>
     @font-face {
         font-family: "SFDisplay";
         src: url('fonts/SFDisplay/SFDisplayRegular.woff2') format('woff2'),
@@ -30,8 +30,8 @@
     .fonts-loaded body.body {
         font-family: "SFDisplay", Roboto, Arial, sans-serif;
     }
-</style>
-<script>
+    </style>
+    <script>
     (function() {
 
         // Optimization for Repeat Views
@@ -71,18 +71,13 @@
             sessionStorage.fontsLoadedFoutWithClassPolyfill = true;
         });
     })();
-</script>
+    </script>
 
     <link rel="stylesheet" href="css/style.css">
 
     <script defer src="js/intersection-observer.min.js"></script>
     <script defer src="js/modernizr-custom.js"></script>
-    <script defer src="js/lazyload.min.js"></script>
-    <script defer src="js/imask.min.js"></script>
-    <script defer src="js/lib.js"></script>
-    <script defer src="js/smoothscroll.min.js"></script>
-    <script defer src="js/modaal.min.js"></script>
-    <script defer src="js/lazy-back.js"></script>
+    <script defer src="js/libs.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 
