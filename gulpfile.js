@@ -17,9 +17,11 @@ var paths = {
         build: 'build'
     },
     js: {
-        index: 'src/index.js',
-        all: 'src/js/**/*.js',
-        build: 'build/js/',
+        index: 'src/js/*.js',
+        plugins: 'src/plugins/*.js',
+        libs: 'src/libs/*.js',
+        all: 'src/**/*.js',
+        build: 'build/js',
     },
     fonts: {
         all: 'src/fonts/**/*.*',
@@ -32,6 +34,10 @@ var paths = {
     svg: {
         src: 'src/images/**/*.svg',
         build: 'build/images'
+    },
+    favicon: {
+        src: "src/favicon/**/*.*",
+        build: "build"
     }
 };
 
@@ -66,18 +72,20 @@ function styles() {
 }
 
 function scripts() {
-    return gulp.src(paths.js.all)
+    return gulp.src(paths.js.libs)
         .pipe(gulp.dest(paths.js.build))
         .pipe(browserSync.stream());
 }
 
 function concat() {
-    return gulp.src('src/libs')
-        .pipe($.concat('libs.js'))
+    return gulp.src(paths.js.plugins)
+        .pipe($.concat('plugins.js'))
         .pipe($.uglify({
             toplevel: true
         }))
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('build/js/'))
+        .pipe(browserSync.stream());
+
 }
 
 function fonts() {
@@ -95,10 +103,16 @@ function html() {
     return gulp.src(paths.html.src)
         .pipe($.fileInclude({
             prefix: '@@',
-            basepath: 'src/templates'
+            basepath: 'src/templates',
+            indent:true
         }))
         .pipe(gulp.dest(paths.html.build))
         .pipe(browserSync.stream());
+}
+
+function favicon() {
+    return gulp.src(paths.favicon.src)
+        .pipe(gulp.dest(paths.favicon.build))
 }
 
 function svg() {
@@ -117,14 +131,14 @@ function watch() {
         }
     });
     gulp.watch(paths.styles.all, styles);
-    gulp.watch(paths.js.all, browserSync.reload);
+    gulp.watch(paths.js.all, concat);
     gulp.watch(paths.js.index, browserSync.reload);
     gulp.watch(paths.html.src, html);
     gulp.watch(paths.images.src, images);
 }
 
-gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, concat, images, fonts), watch));
-gulp.task("build", gulp.parallel(html, styles, scripts, concat, images, fonts));
+gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, concat, images, fonts, favicon), watch));
+gulp.task("build", gulp.parallel(html, styles, scripts, concat, images, fonts, favicon));
 
 function isMax(mq) {
     return /max-width/.test(mq);

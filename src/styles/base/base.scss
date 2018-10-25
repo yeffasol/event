@@ -113,3 +113,7 @@ img.lazyload{
     filter: blur(2vw);
     transform: scale(1.05);
 }
+
+.no-js img.lazyload {
+    display: none;
+}
