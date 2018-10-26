@@ -57,12 +57,6 @@ function styles() {
             level: 2
         }))
         .pipe($.postcss([
-            require("postcss-assets")({
-                loadPaths: ["src/images/"]
-            }),
-            require('postcss-image-inliner')({
-                assetPaths: ['https://icongr.am']
-            }),
             require("css-mqpacker")({
                 sort: sortMediaQueries
             })
