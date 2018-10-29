@@ -4,5 +4,6 @@
       "useBuiltIns": "usage",
       "debug":true
     }]
-  ]
+  ],
+  "plugins": ["syntax-dynamic-import"]
 }

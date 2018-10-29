@@ -41,7 +41,7 @@ const doc = document,
         "TAB": "9"
     };
 
-    root.classList.remove("no-js");
+root.classList.remove("no-js");
 
 (function () {
     doc.addEventListener("click", function () {
@@ -54,3 +54,27 @@ const doc = document,
         }
     });
 })();
+
+//lazy load script file
+// (function () {
+//     function component() {
+//         var element = document.createElement('div');
+//         var button = document.createElement('button');
+//         var br = document.createElement('br');
+//
+//         button.innerHTML = 'Click me and look at the console!';
+//         element.innerHTML = "Hello webpack";
+//         element.appendChild(br);
+//         element.appendChild(button);
+//
+//         button.onclick = e => import('./print').then(module => {
+//             var print = module.default;
+//
+//             print();
+//         });
+//         return element;
+//     }
+//
+//     document.body.appendChild(component());
+//
+// })();

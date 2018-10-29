@@ -1,11 +1,12 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/js/main.js',
-    mode:'production',
+    entry: './src/js/script.js',
+    mode: 'production',
     output: {
-        filename: 'script.js',
-        path: path.resolve(__dirname, 'build/js')
+        filename: 'js/script.js',
+        chunkFilename: 'js/print.js',
+        path: path.resolve(__dirname, 'build')
     },
     module: {
         rules: [{
