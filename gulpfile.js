@@ -58,6 +58,9 @@ function styles() {
             level: 2
         }))
         .pipe($.postcss([
+	        require('css-declaration-sorter')({
+		        order: 'smacss'
+	        }),
             require("postcss-easysprites")({
                 imagePath: "src/images/sprite",
                 spritePath: "src/images/"
