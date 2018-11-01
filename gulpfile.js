@@ -13,6 +13,7 @@ var paths = {
     },
     html: {
         src: 'src/*.html',
+        templates: 'src/**/*.html',
         index: 'index.html',
         build: 'build'
     },
@@ -57,6 +58,10 @@ function styles() {
             level: 2
         }))
         .pipe($.postcss([
+            require("postcss-easysprites")({
+                imagePath: "src/images/sprite",
+                spritePath: "src/images/"
+            }),
             require("css-mqpacker")({
                 sort: sortMediaQueries
             })
@@ -128,6 +133,7 @@ function watch() {
     gulp.watch(paths.js.all, concat);
     gulp.watch(paths.js.index, browserSync.reload);
     gulp.watch(paths.html.src, html);
+    gulp.watch(paths.html.templates, html);
     gulp.watch(paths.images.src, images);
 }
 
