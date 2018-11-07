@@ -55,6 +55,8 @@ root.classList.remove("no-js");
     });
 })();
 
+console.log(3);
+
 //lazy load script file
 // (function () {
 //     function component() {
