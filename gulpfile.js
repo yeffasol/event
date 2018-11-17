@@ -52,7 +52,8 @@ function styles() {
         }))
         .pipe($.sass())
         .pipe($.autoprefixer({
-            cascade: false
+            cascade: false,
+	        grid:true
         }))
         .pipe($.cleanCss({
             level: 2
