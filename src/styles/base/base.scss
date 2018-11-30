@@ -41,7 +41,7 @@ a {
 }
 
 .break:after {
-    // line break br
+    // line break br with css
     content: "\A";
     white-space: pre;
 }
