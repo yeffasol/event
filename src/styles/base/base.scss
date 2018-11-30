@@ -18,6 +18,14 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+*:focus:not(.focus-visible) {
+    outline: none;
+}
+
+.focus-visible {
+    outline: lightgreen solid 2px;
+}
+
 a {
     color: $link_color;
 

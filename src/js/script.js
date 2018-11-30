@@ -36,26 +36,11 @@ function hamburger(element, menu) {
 }
 
 const doc = document,
-    root = document.getElementsByTagName('html')[0],
-    KEYS = {
-        "TAB": "9"
-    };
+    root = document.getElementsByTagName('html')[0];
 
 root.classList.remove("no-js");
 
-(function () {
-    doc.addEventListener("click", function () {
-        root.classList.remove("focus");
-    });
 
-    doc.addEventListener("keyup", function (e) {
-        if (e.keyCode == KEYS.TAB) {
-            root.classList.add("focus");
-        }
-    });
-})();
-
-console.log(3);
 
 //lazy load script file
 // (function () {
