@@ -129,3 +129,12 @@ img.lazyload{
 .inline{
     background-size: auto !important;
 }
+
+.lazy-before {
+	height: 281px;
+	background-repeat: no-repeat;
+}
+
+.lazy-loaded{
+	background-image: url(../images/man.jpg);
+}

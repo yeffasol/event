@@ -40,8 +40,6 @@ const doc = document,
 
 root.classList.remove("no-js");
 
-
-
 //lazy load script file
 // (function () {
 //     function component() {

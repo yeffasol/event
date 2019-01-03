@@ -2,97 +2,97 @@
 <html lang="en" class="no-js">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title</title>
 
-    <link rel="preload" href="fonts/SFDisplay/SFDisplayRegular.woff2" as="font" type="font/woff2" crossorigin="">
-        <style>
-        @font-face {
-            font-family: "SFDisplay";
-            src: url('fonts/SFDisplay/SFDisplayRegular.woff2') format('woff2'),
-            url('fonts/SFDisplay/SFDisplayRegular.woff') format('woff'),
-            url('fonts/SFDisplay/SFDisplayRegular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
+	<link rel="preload" href="fonts/SFDisplay/SFDisplayRegular.woff2" as="font" type="font/woff2" crossorigin="">
+	    <style>
+	    @font-face {
+	        font-family: "SFDisplay";
+	        src: url('fonts/SFDisplay/SFDisplayRegular.woff2') format('woff2'),
+	        url('fonts/SFDisplay/SFDisplayRegular.woff') format('woff'),
+	        url('fonts/SFDisplay/SFDisplayRegular.ttf') format('truetype');
+	        font-weight: normal;
+	        font-style: normal;
+	    }
 
-        @font-face {
-            font-family: "SFDisplayLight";
-            src: url('fonts/SFDisplay/SFDisplayLight.woff2') format('woff2'),
-            url('fonts/SFDisplay/SFDisplayLight.woff') format('woff'),
-            url('fonts/SFDisplay/SFDisplayLight.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
+	    @font-face {
+	        font-family: "SFDisplayLight";
+	        src: url('fonts/SFDisplay/SFDisplayLight.woff2') format('woff2'),
+	        url('fonts/SFDisplay/SFDisplayLight.woff') format('woff'),
+	        url('fonts/SFDisplay/SFDisplayLight.ttf') format('truetype');
+	        font-weight: normal;
+	        font-style: normal;
+	    }
 
-        .fonts-loaded body.body {
-            font-family: "SFDisplay", Roboto, Arial, sans-serif;
-        }
-        </style>
-        <script>
-        (function() {
+	    .fonts-loaded body.body {
+	        font-family: "SFDisplay", Roboto, Arial, sans-serif;
+	    }
+	    </style>
+	    <script>
+	    (function() {
 
-            // Optimization for Repeat Views
-            if( sessionStorage.fontsLoadedFoutWithClassPolyfill ) {
-                document.documentElement.className += " fonts-loaded";
-                return;
-            }
+	        // Optimization for Repeat Views
+	        if( sessionStorage.fontsLoadedFoutWithClassPolyfill ) {
+	            document.documentElement.className += " fonts-loaded";
+	            return;
+	        }
 
-            /* Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */
-            (function(){'use strict';var f,g=[];function l(a){g.push(a);1==g.length&&f()}function m(){for(;g.length;)g[0](),g.shift()}f=function(){setTimeout(m)};function n(a){this.a=p;this.b=void 0;this.f=[];var b=this;try{a(function(a){q(b,a)},function(a){r(b,a)})}catch(c){r(b,c)}}var p=2;function t(a){return new n(function(b,c){c(a)})}function u(a){return new n(function(b){b(a)})}function q(a,b){if(a.a==p){if(b==a)throw new TypeError;var c=!1;try{var d=b&&b.then;if(null!=b&&"object"==typeof b&&"function"==typeof d){d.call(b,function(b){c||q(a,b);c=!0},function(b){c||r(a,b);c=!0});return}}catch(e){c||r(a,e);return}a.a=0;a.b=b;v(a)}}
-                function r(a,b){if(a.a==p){if(b==a)throw new TypeError;a.a=1;a.b=b;v(a)}}function v(a){l(function(){if(a.a!=p)for(;a.f.length;){var b=a.f.shift(),c=b[0],d=b[1],e=b[2],b=b[3];try{0==a.a?"function"==typeof c?e(c.call(void 0,a.b)):e(a.b):1==a.a&&("function"==typeof d?e(d.call(void 0,a.b)):b(a.b))}catch(h){b(h)}}})}n.prototype.g=function(a){return this.c(void 0,a)};n.prototype.c=function(a,b){var c=this;return new n(function(d,e){c.f.push([a,b,d,e]);v(c)})};
-                function w(a){return new n(function(b,c){function d(c){return function(d){h[c]=d;e+=1;e==a.length&&b(h)}}var e=0,h=[];0==a.length&&b(h);for(var k=0;k<a.length;k+=1)u(a[k]).c(d(k),c)})}function x(a){return new n(function(b,c){for(var d=0;d<a.length;d+=1)u(a[d]).c(b,c)})};window.Promise||(window.Promise=n,window.Promise.resolve=u,window.Promise.reject=t,window.Promise.race=x,window.Promise.all=w,window.Promise.prototype.then=n.prototype.c,window.Promise.prototype["catch"]=n.prototype.g);}());
+	        /* Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */
+	        (function(){'use strict';var f,g=[];function l(a){g.push(a);1==g.length&&f()}function m(){for(;g.length;)g[0](),g.shift()}f=function(){setTimeout(m)};function n(a){this.a=p;this.b=void 0;this.f=[];var b=this;try{a(function(a){q(b,a)},function(a){r(b,a)})}catch(c){r(b,c)}}var p=2;function t(a){return new n(function(b,c){c(a)})}function u(a){return new n(function(b){b(a)})}function q(a,b){if(a.a==p){if(b==a)throw new TypeError;var c=!1;try{var d=b&&b.then;if(null!=b&&"object"==typeof b&&"function"==typeof d){d.call(b,function(b){c||q(a,b);c=!0},function(b){c||r(a,b);c=!0});return}}catch(e){c||r(a,e);return}a.a=0;a.b=b;v(a)}}
+	            function r(a,b){if(a.a==p){if(b==a)throw new TypeError;a.a=1;a.b=b;v(a)}}function v(a){l(function(){if(a.a!=p)for(;a.f.length;){var b=a.f.shift(),c=b[0],d=b[1],e=b[2],b=b[3];try{0==a.a?"function"==typeof c?e(c.call(void 0,a.b)):e(a.b):1==a.a&&("function"==typeof d?e(d.call(void 0,a.b)):b(a.b))}catch(h){b(h)}}})}n.prototype.g=function(a){return this.c(void 0,a)};n.prototype.c=function(a,b){var c=this;return new n(function(d,e){c.f.push([a,b,d,e]);v(c)})};
+	            function w(a){return new n(function(b,c){function d(c){return function(d){h[c]=d;e+=1;e==a.length&&b(h)}}var e=0,h=[];0==a.length&&b(h);for(var k=0;k<a.length;k+=1)u(a[k]).c(d(k),c)})}function x(a){return new n(function(b,c){for(var d=0;d<a.length;d+=1)u(a[d]).c(b,c)})};window.Promise||(window.Promise=n,window.Promise.resolve=u,window.Promise.reject=t,window.Promise.race=x,window.Promise.all=w,window.Promise.prototype.then=n.prototype.c,window.Promise.prototype["catch"]=n.prototype.g);}());
 
-            (function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
-                this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
-                function t(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function y(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;y(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);y(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,E=null,F=null;function G(){if(null===C)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);C=!!a&&603>parseInt(a[1],10)}else C=!1;return C}function J(){null===F&&(F=!!document.fonts);return F}
-                function K(){if(null===E){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}E=""!==a.style.font}return E}function L(a,b){return[a.style,a.weight,K()?a.stretch:"","100px",b].join(" ")}
-                A.prototype.load=function(a,b){var c=this,k=a||"BESbswy",q=0,D=b||3E3,H=(new Date).getTime();return new Promise(function(a,b){if(J()&&!G()){var M=new Promise(function(a,b){function e(){(new Date).getTime()-H>=D?b():document.fonts.load(L(c,'"'+c.family+'"'),k).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),N=new Promise(function(a,c){q=setTimeout(c,D)});Promise.race([N,M]).then(function(){clearTimeout(q);a(c)},function(){b(c)})}else m(function(){function u(){var b;if(b=-1!=
-                        f&&-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),B=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=B&&(f==v&&g==v&&h==v||f==w&&g==w&&h==w||f==x&&g==x&&h==x)),b=!b;b&&(d.parentNode&&d.parentNode.removeChild(d),clearTimeout(q),a(c))}function I(){if((new Date).getTime()-H>=D)d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,
-                    g=n.a.offsetWidth,h=p.a.offsetWidth,u();q=setTimeout(I,50)}}var e=new r(k),n=new r(k),p=new r(k),f=-1,g=-1,h=-1,v=-1,w=-1,x=-1,d=document.createElement("div");d.dir="ltr";t(e,L(c,"sans-serif"));t(n,L(c,"serif"));t(p,L(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);v=e.a.offsetWidth;w=n.a.offsetWidth;x=p.a.offsetWidth;I();z(e,function(a){f=a;u()});t(e,L(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;u()});t(n,L(c,'"'+c.family+'",serif'));
-                    z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
-
-
-            var fontA = new FontFaceObserver('SFDisplay');
-            var fontB = new FontFaceObserver('SFDisplayLight', {
-                weight: 300
-            });
+	        (function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+	            this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
+	            function t(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function y(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;y(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);y(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,E=null,F=null;function G(){if(null===C)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);C=!!a&&603>parseInt(a[1],10)}else C=!1;return C}function J(){null===F&&(F=!!document.fonts);return F}
+	            function K(){if(null===E){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}E=""!==a.style.font}return E}function L(a,b){return[a.style,a.weight,K()?a.stretch:"","100px",b].join(" ")}
+	            A.prototype.load=function(a,b){var c=this,k=a||"BESbswy",q=0,D=b||3E3,H=(new Date).getTime();return new Promise(function(a,b){if(J()&&!G()){var M=new Promise(function(a,b){function e(){(new Date).getTime()-H>=D?b():document.fonts.load(L(c,'"'+c.family+'"'),k).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),N=new Promise(function(a,c){q=setTimeout(c,D)});Promise.race([N,M]).then(function(){clearTimeout(q);a(c)},function(){b(c)})}else m(function(){function u(){var b;if(b=-1!=
+	                    f&&-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),B=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=B&&(f==v&&g==v&&h==v||f==w&&g==w&&h==w||f==x&&g==x&&h==x)),b=!b;b&&(d.parentNode&&d.parentNode.removeChild(d),clearTimeout(q),a(c))}function I(){if((new Date).getTime()-H>=D)d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,
+	                g=n.a.offsetWidth,h=p.a.offsetWidth,u();q=setTimeout(I,50)}}var e=new r(k),n=new r(k),p=new r(k),f=-1,g=-1,h=-1,v=-1,w=-1,x=-1,d=document.createElement("div");d.dir="ltr";t(e,L(c,"sans-serif"));t(n,L(c,"serif"));t(p,L(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);v=e.a.offsetWidth;w=n.a.offsetWidth;x=p.a.offsetWidth;I();z(e,function(a){f=a;u()});t(e,L(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;u()});t(n,L(c,'"'+c.family+'",serif'));
+	                z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
 
 
-            Promise.all([
-                fontA.load(null, 10000),
-                fontB.load(null, 10000)
-            ]).then(function () {
-                document.documentElement.className += " fonts-loaded";
+	        var fontA = new FontFaceObserver('SFDisplay');
+	        var fontB = new FontFaceObserver('SFDisplayLight', {
+	            weight: 300
+	        });
 
-                // Optimization for Repeat Views
-                sessionStorage.fontsLoadedFoutWithClassPolyfill = true;
-            });
-        })();
-        </script>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png"/>
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png"/>
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png"/>
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png"/>
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="48x48" href="favicon/android-chrome-48x48.png"/>
-    <link rel="icon" type="image/png" sizes="72x72" href="favicon/android-chrome-72x72.png"/>
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon/android-chrome-96x96.png"/>
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png"/>
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg"/>
-    <link rel="manifest" href="favicon/manifest.json"/>
-    <meta name="msapplication-TileColor" content="#1D298C"/>
+	        Promise.all([
+	            fontA.load(null, 10000),
+	            fontB.load(null, 10000)
+	        ]).then(function () {
+	            document.documentElement.className += " fonts-loaded";
 
-    <link rel="stylesheet" href="css/style.css">
+	            // Optimization for Repeat Views
+	            sessionStorage.fontsLoadedFoutWithClassPolyfill = true;
+	        });
+	    })();
+	    </script>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png"/>
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png"/>
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png"/>
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon/android-chrome-48x48.png"/>
+	<link rel="icon" type="image/png" sizes="72x72" href="favicon/android-chrome-72x72.png"/>
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/android-chrome-96x96.png"/>
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png"/>
+	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg"/>
+	<link rel="manifest" href="favicon/manifest.json"/>
+	<meta name="msapplication-TileColor" content="#1D298C"/>
+
+	<link rel="stylesheet" href="css/style.css">
 
     <script defer src="js/intersection-observer.min.js"></script>
     <script defer src="js/plugins.js"></script>
@@ -105,80 +105,103 @@
 
 <!--start wrapper-->
 <div class="wrapper">
-
+	<div class="svg-wrapper" style="height: 0; width: 0; position: absolute; visibility: hidden">
+		<svg>
+			<symbol id="vk" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304.36 304.36"><path d="M261.945 175.576c10.096 9.857 20.752 19.131 29.807 29.982 4 4.822 7.787 9.798 10.684 15.394 4.105 7.955.387 16.709-6.746 17.184l-44.34-.02c-11.436.949-20.559-3.655-28.23-11.474-6.139-6.253-11.824-12.908-17.727-19.372-2.42-2.642-4.953-5.128-7.979-7.093-6.053-3.929-11.307-2.726-14.766 3.587-3.523 6.421-4.322 13.531-4.668 20.687-.475 10.441-3.631 13.186-14.119 13.664-22.414 1.057-43.686-2.334-63.447-13.641-17.422-9.968-30.932-24.04-42.691-39.971-22.895-31.021-40.428-65.108-56.186-100.15C-2.01 76.458.584 72.22 9.295 72.07c14.465-.281 28.928-.261 43.41-.02 5.879.086 9.771 3.458 12.041 9.012 7.826 19.243 17.402 37.551 29.422 54.521 3.201 4.518 6.465 9.036 11.113 12.216 5.142 3.521 9.057 2.354 11.476-3.374 1.535-3.632 2.207-7.544 2.553-11.434 1.146-13.383 1.297-26.743-.713-40.079-1.234-8.323-5.922-13.711-14.227-15.286-4.238-.803-3.607-2.38-1.555-4.799 3.564-4.172 6.916-6.769 13.598-6.769h50.111c7.889 1.557 9.641 5.101 10.721 13.039l.043 55.663c-.086 3.073 1.535 12.192 7.07 14.226 4.43 1.448 7.35-2.096 10.008-4.905 11.998-12.734 20.561-27.783 28.211-43.366 3.395-6.852 6.314-13.968 9.143-21.078 2.096-5.276 5.385-7.872 11.328-7.757l48.229.043c1.43 0 2.877.021 4.262.258 8.127 1.385 10.354 4.881 7.844 12.817-3.955 12.451-11.65 22.827-19.174 33.251-8.043 11.129-16.645 21.877-24.621 33.072-7.328 10.223-6.746 15.376 2.357 24.255zm0 0" fill-rule="evenodd" clip-rule="evenodd"/></symbol>
+			<symbol id="facebook"  xmlns="http://www.w3.org/2000/svg"><path d="M6.275 3.357h2.398V0H5.795C2.656.181 1.54 2.387 1.948 6.115H0v3.517h1.958v9.312h3.837V9.632h2.857V6.115H5.786c-.021-1.045-.036-2.406.489-2.758z"/></symbol>
+			<symbol id="youtube" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="a" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></symbol>
+		</svg>
+	</div>
 	<!--start content-->
 	<div class="content">
 		<a href="#main" class="skip-to-content js-scroll">To the main</a>
 
 		<!--start header-->
 		<header class="header">
-		    <div class="container">
-		        <div class="header__blocks">
-		            <div class="header__block">
-		                <div class="logo">
-		                    <a class="logo__link" href="#" title="Перейти на главную страницу">
-		                        <img class="logo__pic" src="http://via.placeholder.com/150x80"
-		                             alt="Перейти на главную страницу">
-		                    </a>
-		                </div>
-		            </div>
-		            <div class="header__block header__block_wide">
-		                <button class="hamburger" id="js-hamburger" aria-expanded="false">
-		                    <span class="hamburger__screen-reader-text">Меню</span>
+			<div class="container">
+				<div class="header__blocks">
+					<div class="header__block">
+						<div class="logo">
+							<a class="logo__link" href="#" title="Перейти на главную страницу">
+								<img class="logo__pic" src="https://via.placeholder.com/150x80"
+								     alt="Перейти на главную страницу">
+							</a>
+						</div>
+					</div>
+					<div class="header__block header__block_wide">
+						<button class="hamburger" id="js-hamburger" aria-expanded="false">
+							<span class="hamburger__screen-reader-text">Меню</span>
 
-		                </button>
-		                <div class="menu" id="js-menu" aria-expanded="false">
-		                    <nav>
-		                        <ul class="menu__list">
-		                            <li class="menu__item">
-		                                <a class="menu__link" href="#">Продукты</a>
-		                            </li>
-		                            <li class="menu__item">
-		                                <a class="menu__link" href="#">Корзина</a>
-		                            </li>
-		                            <li class="menu__item">
-		                                <a class="menu__link" href="#">Доставка</a>
-		                            </li>
-		                            <li class="menu__item">
-		                                <a class="menu__link" href="#">Руководство</a>
-		                            </li>
-		                            <li class="menu__item">
-		                                <a class="menu__link" href="#">Контакты</a>
-		                            </li>
-		                        </ul>
-		                    </nav>
-		                </div>
-		            </div>
-		            <div class="header__block header__block_mobile">
-		                <div class="social">
-		                    <ul class="social__list">
-		                        <li class="social__item">
-		                            <a class="social__link social__link_vk" href="#">В контакте</a>
-		                        </li>
-		                        <li class="social__item">
-		                            <a class="social__link social__link_fb" href="#">Facebook</a>
-		                        </li>
-		                        <li class="social__item">
-		                            <a class="social__link social__link_youtube" href="#">Youtube</a>
-		                        </li>
-		                        <li class="social__item">
-		                            <a class="social__link inline social__link_arrow" href="#">arrow</a>
-		                        </li>
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
+						</button>
+						<div class="menu" id="js-menu" aria-expanded="false">
+							<nav>
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a class="menu__link" href="#">Продукты</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">Корзина</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">Доставка</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">Руководство</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<div class="header__block header__block_mobile">
+						<div class="social">
+							<ul class="social__list">
+								<li class="social__item">
+									<a class="social__link social__link_vk" href="#">
+										<svg class="social__svg">
+											<use xlink:href="#vk"></use>
+										</svg>
+										<span class="social__label">В контакте</span>
+									</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link social__link_fb" href="#">
+										<svg class="social__svg">
+											<use xlink:href="#facebook"></use>
+										</svg>
+										<span class="social__label">Facebook</span>
+									</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link social__link_youtube" href="#">
+										<svg class="social__svg">
+											<use xlink:href="#youtube"></use>
+										</svg>
+										<span class="social__label">Youtube</span>
+									</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link inline social__link_arrow" href="#">
+										<span class="social__label">Arrow</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</header>
 		<!--end header-->
 
 		<main id="main">
-			<!--<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAASACADASEAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAABgcIBf/EAC0QAAEDAgQDBwUBAAAAAAAAAAECAwQFEQAGEiEHEyIjMTJBYXGBFBYXM0JS/8QAGAEAAwEBAAAAAAAAAAAAAAAAAwQFAQL/xAAiEQACAgEDBAMAAAAAAAAAAAABAgADEhExQRMhIiOB0fD/2gAMAwEAAhEDEQA/AAetZ5q7OYXoNLnSIcWOvQkMOlJURtuQd/TFKcIZmYOTJj5irMWpBLaFtoF+e1fyVcA29/PE6heliF+ZRu9isSNow5Di+Sos25idwCbA+hwMvV9dQdlwY7Km3WXNC1L7kjSD8m5tgt9rL4jmBoqVtSeJHUuopg5hrUluEHIkwAJcKLhChbr22G9zh7cLczPVo/WNx1tJMcpkPIYPauA2HUBuBvgbqyHWNV2K1ZU/u8PaXW1ymgZDhYd1OHQoKA0i+m5I9BthQ/dctniFNZkOR2oU0oRIfLnQhwMagAr4OF7DlvNC4k47RDQ1KTSEBKiAu4UAfFuO/FTcFmm/xtR+zR+tX8j/AEcPPF/oTWrgDTS+UAjpV4dsT1WFK58kajYv6jv3nTa/vbAVAJOs7JIUT//Z" class="lazyload" width="500" data-src="images/man.jpg" alt="">-->
+
+			<!--<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" class="lazyload" width="500"  data-src="images/man.jpg" alt="">-->
 			<!--<noscript>-->
 			<!--<img src="images/man.jpg" alt="">-->
 			<!--</noscript>-->
-			<!--<div id="bg-image" class="lazy"></div>-->
-
+			<!--<div id="bg-image" class="lazy-before lazy"></div>-->
 		</main>
 	</div>
 	<!--end content-->

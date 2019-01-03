@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (entry.isIntersecting) {
                 var image = entry.target;
                 image.classList.remove("lazy");
+                image.classList.add("lazy-loaded");
                 imageObserver.unobserve(image);
             }
         });
