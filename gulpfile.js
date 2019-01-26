@@ -128,7 +128,7 @@ function watch() {
     browserSync.init({
         notify: false,
         open: false,
-        tunnel: true,
+        tunnel: "project",
         server: {
             baseDir: "build"
         }
