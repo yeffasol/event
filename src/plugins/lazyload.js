@@ -17,7 +17,7 @@
 
 		while (i--) {
 			var wH = window.innerHeight;
-			var offset = 100;
+			var offset = 200;
 			var yPosition = images[i].getBoundingClientRect().top - wH;
 
 			// if the top of the image is within 100px from the bottom of the viewport
@@ -56,10 +56,6 @@
 			}
 		}
 	}
-
-	// run on load
-
-	lazyload();
 
 	// run on scroll event
 
