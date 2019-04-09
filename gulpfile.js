@@ -91,11 +91,6 @@ function concat() {
 
 }
 
-function fonts() {
-    return gulp.src(paths.fonts.all)
-        .pipe(gulp.dest(paths.fonts.build))
-}
-
 function images() {
     return gulp.src(paths.images.src)
         .pipe($.tinypng('BLZpO1PPn1JhAC0IBa8ncwiTmWm93ySw'))
@@ -113,10 +108,6 @@ function html() {
         .pipe(browserSync.stream());
 }
 
-function favicon() {
-    return gulp.src(paths.favicon.src)
-        .pipe(gulp.dest(paths.favicon.build))
-}
 
 function svg() {
     return gulp.src(paths.svg.src)
@@ -141,8 +132,8 @@ function watch() {
     gulp.watch(paths.images.src, images);
 }
 
-gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, concat, images, fonts, favicon), watch));
-gulp.task("build", gulp.parallel(html, styles, scripts, concat, images, fonts, favicon));
+gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, concat), watch));
+gulp.task("build", gulp.parallel(html, styles, scripts, concat));
 
 function isMax(mq) {
     return /max-width/.test(mq);
