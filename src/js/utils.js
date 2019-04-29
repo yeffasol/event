@@ -38,3 +38,20 @@ export function hamburger(element, idmenu) {
         }
     };
 }
+// closest polyfill https://allthingssmitty.com/2019/03/25/using-closest-to-return-the-correct-dom-element/
+if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector ||
+        Element.prototype.webkitMatchesSelector;
+}
+
+if (!Element.prototype.closest) {
+    Element.prototype.closest = function(s) {
+        var el = this;
+
+        do {
+            if (el.matches(s)) return el;
+            el = el.parentElement || el.parentNode;
+        } while (el !== null && el.nodeType === 1);
+        return null;
+    };
+}

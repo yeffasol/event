@@ -10,7 +10,6 @@ html {
     -webkit-overflow-scrolling: touch;
     scrollbar-color: rgba($primary, 0.3) rgba(#2e2b39, 0.3);
     overflow-x: hidden;
-    overflow-y: scroll;
 
     &::-webkit-scrollbar {
         width: 10px;
@@ -131,7 +130,7 @@ img.lazyload{
     transform: scale(1.05);
 }
 
-.no-js img.lazyload {
+.no-js img.lazy{
     display: none;
 }
 
@@ -144,6 +143,17 @@ img.lazyload{
 	background-repeat: no-repeat;
 }
 
-.lazy-loaded{
+.lazy-before.lazy-bg-loaded{
 	background-image: url(../images/man.jpg);
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
