@@ -67,8 +67,11 @@
 		"webpack-cli": "^3.1.2"
 	},
 	"browserslist": [
-		"> 0.01%",
-		"last 2 versions"
+	"> .5% and last 2 versions",
+    "not dead",
+    "not OperaMini all",
+    "ie >= 11",
+    "Edge >= 12"
 	],
 	"dependencies": {
 		"@babel/polyfill": "^7.0.0",
