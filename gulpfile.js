@@ -62,6 +62,7 @@ function styles() {
 	        require('css-declaration-sorter')({
 		        order: 'smacss'
 	        }),
+       require('postcss-animation'),
             require("postcss-easysprites")({
                 imagePath: "src/images/sprite",
                 spritePath: "src/images/"
