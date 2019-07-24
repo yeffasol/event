@@ -1,12 +1,8 @@
 .logo {
-    display: flex;
-    justify-content: center;
 
-  animation-name: bounce;
-
-    &__link {
-        display: inline-block;
-        vertical-align: middle;
-    }
+  &__link {
+    display: block;
+    text-transform: uppercase;
+  }
 
 }

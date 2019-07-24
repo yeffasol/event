@@ -1,159 +1,142 @@
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 html {
-    -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
-    background-color: $background;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-color: rgba($primary, 0.3) rgba(#2e2b39, 0.3);
-    overflow-x: hidden;
-
-    &::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: rgba($primary, 0.3);
-        border-radius: 10px;
-    }
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
-    font-weight: 400;
-    color: $color;
-}
-
-*:focus:not(.focus-visible) {
-    outline: none;
-}
-
-.focus-visible {
-    outline: lightgreen solid 2px;
+  font-weight: 400;
+  color: $color;
+  line-height: 1.2;
 }
 
 a {
-    color: $link_color;
+  color: #fff;
+  transition: opacity 0.3s;
 
-    &:hover {
-        color: $link_color_hover;
-        text-decoration: none;
-    }
+  &:hover {
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+  }
 
-    &:focus {
-        text-decoration: none;
-        color: currentColor;
-    }
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .break:after {
-    // line break br with css
-    content: "\A";
-    white-space: pre;
+  // line break br with css
+  content: "\A";
+  white-space: pre;
 }
 
 svg {
-    fill: currentColor;
+  fill: currentColor;
 }
 
 input:focus::placeholder,
 textarea:focus::placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 img,
 video,
 audio {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 sub,
 sup {
-    line-height: 0;
+  line-height: 0;
 }
 
 label,
 button,
 select {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input {
-    cursor: text;
+  cursor: text;
 }
 
 [disabled] {
-    cursor: default;
+  cursor: default;
 }
 
 abbr[title],
 acronym[title],
 dfn {
-    cursor: help;
+  cursor: help;
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .video-wrapper {
-    position: relative;
-    height: 0;
-    padding-top: 25px;
-    padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 56.25%; /* 16:9 */
 }
 
 .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 input,
 textarea {
-    background-clip: padding-box;
+  background-clip: padding-box;
 }
 
 p {
-    &:last-child {
-        margin-bottom: 0;
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-img.lazyload{
-    filter: blur(2vw);
-    transform: scale(1.05);
+img.lazyload {
+  filter: blur(2vw);
+  transform: scale(1.05);
 }
 
-.no-js img.lazy{
-    display: none;
+.no-js img.lazy {
+  display: none;
 }
 
-.inline{
-    background-size: auto !important;
+.inline {
+  background-size: auto !important;
 }
 
 .lazy-before {
-	height: 281px;
-	background-repeat: no-repeat;
+  height: 281px;
+  background-repeat: no-repeat;
 }
 
-.lazy-before.lazy-bg-loaded{
-	background-image: url(../images/man.jpg);
+.lazy-before.lazy-bg-loaded {
+  background-image: url(../images/man.jpg);
 }
 
 .sr-only {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

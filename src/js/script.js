@@ -1,49 +1,64 @@
-import { addVoidForLinks, hamburger } from './utils';
+import { addVoidForLinks, debounce } from './utils';
+
 const doc = document;
-const root = doc.getElementsByTagName("html")[0];
 addVoidForLinks(doc.querySelectorAll(`a`));
-hamburger(`js-hamburger`, `js-menu`);
-root.classList.remove("no-js");
-document.addEventListener("DOMContentLoaded", yall);
 
-const person = {
-    name: "Yoda",
-    designation: "Jedi Master ",
-};
-
-function trainJedi(jediWarrion) {
-    if (jediWarrion.name === "Yoda") {
-        console.log("No need! already trained");
+var swiperEvent = new Swiper('.js-swiper-event', {
+  slidesPerView: 5,
+  initialSlide: 2,
+  spaceBetween: 30,
+  centeredSlides: true,
+  grabCursor: true,
+  touchReleaseOnEdges: true,
+  breakpoints: {
+    // when window width is <= 320px
+    1120: {
+      slidesPerView: 3,
+    },
+    767: {
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.slider .swiper-button-next',
+        prevEl: '.slider .swiper-button-prev',
+      },
     }
-    console.log(`Training ${jediWarrion.name} complete`);
-}
+  },
+  on: {
+    slideChange: function () {
 
-trainJedi(person);
-trainJedi({
-    name: "Adeel",
-    designation: "padawan"
+      function getSlide() {
+        let allSlides = doc.querySelectorAll(".swiper-slide");
+        for (let i = 0; i < allSlides.length; i++) {
+          allSlides[i].classList.remove("swiper-slide-small");
+        }
+        let swiperPrev = doc.querySelector(".swiper-slide-prev");
+
+        if (swiperPrev) {
+          let sliderSmall = swiperPrev.previousElementSibling;
+
+          if (sliderSmall) {
+            sliderSmall.classList.add('swiper-slide-small');
+          }
+        }
+
+      }
+
+      setTimeout(getSlide, 40);
+
+    },
+  },
 });
 
-// lazy load script file
-(function () {
-    function component() {
-        var element = document.createElement('div');
-        var button = document.createElement('button');
-        var br = document.createElement('br');
+var wheel = debounce(function(event) {
+  event.preventDefault();
+  if (event.deltaY < 0) {
+    let index = swiperEvent.activeIndex - 1;
+    swiperEvent.slideTo(index);
+  } else {
+    let index = swiperEvent.activeIndex + 1;
+    swiperEvent.slideTo(index);
+  }
+}, 150);
 
-        button.innerHTML = 'Click me and look at the console!';
-        element.innerHTML = "Hello webpack";
-        element.appendChild(br);
-        element.appendChild(button);
 
-        button.onclick = e => import('./print').then(module => {
-            var print = module.default;
-
-            print();
-        });
-        return element;
-    }
-
-    document.body.appendChild(component());
-
-})();
+window.addEventListener('mousewheel', wheel);

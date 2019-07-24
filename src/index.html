@@ -2,16 +2,14 @@
 <html lang="en" class="no-js">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Title</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event</title>
 
-	@@include('font.html')
-
-	@@include('favicon.html')
-
-	<link rel="stylesheet" href="css/style.css">
+  @@include('favicon.html')
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -19,35 +17,105 @@
 
 <!--start wrapper-->
 <div class="wrapper">
-	@@include('svg.html')
-	<!--start content-->
-	<div class="content">
-		<a href="#main" class="skip-to-content skip-to-content_style js-scroll">To the main</a>
 
-		@@include('header.html')
 
-		<main id="main">
+  @@include('header.html')
 
-			<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" class="lazy" width="500" data-src="images/man.jpg" alt="">
-			<noscript>
-			<img src="images/man.jpg" alt="">
-			</noscript>
-			<div id="bg-image" class="lazy-before lazy-bg"></div>
-		</main>
-	</div>
-	<!--end content-->
+  <main class="main">
+    <div class="container">
+      <div class="main__left">Соперник №1</div>
+      <div class="main__right">Соперник №2</div>
+      <div class="slider">
+        <div class="swiper-container swiper_event js-swiper-event">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slider__item">
+                <div class="hexagon">
+                  <div class="hexagon__center">
+                    <div class="hexagon__figure">
+                      <div class="hexagon__date">30 <br> мая</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider__item">
+                <div class="hexagon">
+                  <div class="hexagon__center">
+                    <div class="hexagon__figure">
 
-	@@include('footer.html')
+                      <div class="hexagon__date">17 <br> июня</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider__item">
+                <div class="hexagon">
+                  <div class="hexagon__center">
+                    <div class="hexagon__figure">
+                      <div class="hexagon__active">
+                        <div class="hexagon__prop">Стадион</div>
+                        <div class="hexagon__big-date">26 июня</div>
+                        <div class="hexagon__time">19:00</div>
+                        <a class="hexagon__buy" href="">Купить билет</a>
+                      </div>
+                      <div class="hexagon__date">26 <br> июня</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider__item">
+                <div class="hexagon">
+                  <div class="hexagon__center">
+                    <div class="hexagon__figure">
+                      <div class="hexagon__active">
+                        <div class="hexagon__prop">Стадион</div>
+                        <div class="hexagon__big-date">16 июля</div>
+                        <div class="hexagon__time">19:00</div>
+                        <a class="hexagon__buy" href="">Купить билет</a>
+                      </div>
+                      <div class="hexagon__date">16 <br> июля</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider__item">
+                <div class="hexagon">
+                  <div class="hexagon__center">
+                    <div class="hexagon__figure">
+                      <div class="hexagon__date">30 <br> сентября</div>
+                    </div>
+                  </div>
+                </div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="libs/jquery.min.js"><\/script>')</script>
-  <script defer src="js/intersection-observer.min.js"></script>
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/yall.min.js"></script>
-  <script type="module" src="js/script.js"></script>
-  <script nomodule defer src="js/script-old.js"></script>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </div>
+  </main>
+
 </div>
 <!--end wrapper-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="libs/jquery.min.js"><\/script>');</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<script type="module" src="js/script.js"></script>
+<script nomodule defer src="js/script-old.js"></script>
 </body>
 
 </html>

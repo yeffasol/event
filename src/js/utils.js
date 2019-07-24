@@ -7,51 +7,25 @@ function addPhoneMask(elements) {
     });
 }
 
+export function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
 export function addVoidForLinks(links) {
     for(let link of links ){
         if (link.getAttribute(`href`) == `` || link.getAttribute(`href`) == `#`) {
             link.setAttribute(`href`, `javascript:void(0)`);
         }
     }
-}
-
-// a11y hamburger https://foxland.fi/simple-accessible-svg-menu-hamburger-animation
-export function hamburger(element, idmenu) {
-    const button = document.getElementById(element);
-
-    const menu = document.getElementById(idmenu);
-
-    button.onclick = function() {
-        // Toggle class "opened". Set also aria-expanded to true or false.
-        if (button.className.indexOf("opened") !== -1) {
-            button.className = button.className.replace(" opened", "");
-            button.setAttribute("aria-expanded", "false");
-            menu.className = menu.className.replace(" active", "");
-            menu.setAttribute("aria-expanded", "false");
-            document.querySelector(`.body`).classList.remove(`overlay`);
-        } else {
-            button.className += " opened";
-            button.setAttribute("aria-expanded", "true");
-            menu.className += " active";
-            menu.setAttribute("aria-expanded", "true");
-            document.querySelector(`.body`).classList.add(`overlay`);
-        }
-    };
-}
-// closest polyfill https://allthingssmitty.com/2019/03/25/using-closest-to-return-the-correct-dom-element/
-if (!Element.prototype.matches) {
-    Element.prototype.matches = Element.prototype.msMatchesSelector ||
-        Element.prototype.webkitMatchesSelector;
-}
-
-if (!Element.prototype.closest) {
-    Element.prototype.closest = function(s) {
-        var el = this;
-
-        do {
-            if (el.matches(s)) return el;
-            el = el.parentElement || el.parentNode;
-        } while (el !== null && el.nodeType === 1);
-        return null;
-    };
 }

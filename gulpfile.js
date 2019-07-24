@@ -81,17 +81,6 @@ function scripts() {
         .pipe(browserSync.stream());
 }
 
-function concat() {
-    return gulp.src(paths.js.plugins)
-        .pipe($.concat('plugins.js'))
-        .pipe($.uglify({
-            toplevel: true
-        }))
-        .pipe(gulp.dest('build/js/'))
-        .pipe(browserSync.stream());
-
-}
-
 function images() {
     return gulp.src(paths.images.src)
         .pipe($.tinypng('BLZpO1PPn1JhAC0IBa8ncwiTmWm93ySw'))
@@ -120,21 +109,19 @@ function watch() {
     browserSync.init({
         notify: false,
         open: false,
-        tunnel: "project",
         server: {
             baseDir: "build"
         }
     });
     gulp.watch(paths.styles.all, styles);
-    gulp.watch(paths.js.all, concat);
-    gulp.watch(paths.js.index, browserSync.reload);
+    gulp.watch(paths.js.all, browserSync.reload);
     gulp.watch(paths.html.src, html);
     gulp.watch(paths.html.templates, html);
     gulp.watch(paths.images.src, images);
 }
 
-gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts, concat), watch));
-gulp.task("build", gulp.parallel(html, styles, scripts, concat));
+gulp.task("default", gulp.series(gulp.parallel(html, styles, scripts), watch));
+gulp.task("build", gulp.parallel(html, styles, scripts));
 
 function isMax(mq) {
     return /max-width/.test(mq);

@@ -1,5 +1,6 @@
 .header {
     position: relative;
+  z-index: 2;
 
     &__blocks {
         display: flex;
@@ -12,16 +13,11 @@
         &_wide {
             flex-grow: 1;
         }
+
+      &_right{
+        display: flex;
+        align-items: center;
+      }
     }
 
-    @media screen and (max-width: $screen-sm) {
-
-        &__block {
-
-            &_wide {
-                flex-grow: inherit;
-                order: 1;
-            }
-        }
-    }
 }

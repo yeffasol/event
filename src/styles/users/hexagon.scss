@@ -1,0 +1,90 @@
+.hexagon {
+  position: relative;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__figure {
+    --hexagon-size: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--hexagon-size) * 0.645);
+    min-width: calc(var(--hexagon-size) * 0.645);
+    height: var(--hexagon-size);
+    border-radius: calc(var(--hexagon-size) / 10);
+    background-color: #fff;
+    transition: transform 400ms ease;
+    color: #000000;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: inherit;
+      height: inherit;
+      background-color: #fff;
+      border-radius: inherit;
+      z-index: -1;
+    }
+
+    &:before {
+      transform: rotate(60deg);
+    }
+
+    &:after {
+      transform: rotate(-60deg);
+    }
+  }
+
+  &__date {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  &__active {
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &__prop,
+  &__time {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  &__big-date {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__buy {
+    color: #000;
+    padding: 10px;
+    padding-top: 8px;
+    padding-bottom: 12px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    white-space: nowrap;
+
+    &:hover {
+      color: #000;
+    }
+
+  }
+}

@@ -1,0 +1,25 @@
+.slider {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  transform: translateX(-50%) translateY(-50%) rotate(-33deg);
+
+  &__item {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(33deg);
+  }
+
+  @media (min-width: 768px) {
+    .swiper-button-next, .swiper-button-prev{
+      display: none;
+    }
+  }
+
+}
