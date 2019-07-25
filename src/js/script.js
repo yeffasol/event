@@ -11,5 +11,5 @@ function renderUsers(data) {
   slider(data);
 }
 
-makeAJAXCall("../data/events.json", "GET", renderUsers);
+makeAJAXCall("https://yeffasol.github.io/event/data/events.json", "GET", renderUsers);
 
