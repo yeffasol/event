@@ -1,23 +1,24 @@
 .header {
-    position: relative;
-  z-index: 2;
+  position: relative;
 
-    &__blocks {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+  }
+
+  &__block {
+
+    &_wide {
+      flex-grow: 1;
     }
 
-    &__block {
-
-        &_wide {
-            flex-grow: 1;
-        }
-
-      &_right{
-        display: flex;
-        align-items: center;
-      }
+    &_right {
+      display: flex;
+      align-items: center;
+      min-width: 160px;
     }
+  }
 
 }

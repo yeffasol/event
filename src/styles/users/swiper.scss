@@ -10,17 +10,21 @@
         margin-right: 55px !important;
 
         .hexagon {
+          cursor: default;
 
           &__figure {
             --hexagon-size: 200px;
           }
 
           &__active {
-            display: flex;
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(-50%) scale(1);
           }
 
           &__date {
-            display: none;
+            opacity: 0;
+            pointer-events: none;
           }
         }
       }
@@ -43,6 +47,7 @@
       }
 
       &-small {
+        margin-right: 10px !important;
 
         .hexagon {
 
@@ -58,12 +63,22 @@
       }
     }
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1200px) {
       .swiper-slide {
 
-        &-active,
-        &-next + .swiper-slide {
-          margin-left: initial;
+        &-active{
+          margin-right: 30px !important;
+        }
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .swiper-slide {
+
+        &-active{
+          margin-right: 0 !important;
+          margin-left: 0;
         }
       }
     }

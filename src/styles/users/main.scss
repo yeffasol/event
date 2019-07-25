@@ -1,18 +1,108 @@
-.main{
+.main {
+  position: relative;
   flex-grow: 1;
-  overflow: hidden;
+  z-index: 2;
 
-  .container{
+  .container {
     height: 100%;
   }
 
+  &__right,
+  &__left {
+    position: absolute;
+    min-height: 100px;
+    background-color: #fff;
+    padding: 35px 40px;
+    font-size: 25px;
+    font-weight: 700;
+
+    .svg-triangle {
+      position: absolute;
+      top: 0;
+
+      path {
+        stroke-width: 20;
+        stroke: #fff;
+        fill: #fff;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+
+    }
+
+    &-text {
+      white-space: nowrap;
+    }
+  }
 
   &__right {
-    position: fixed;
     right: 0;
     top: 50%;
-    width: 50%;
-    background-color: #fff;
-    padding-left: 20%;
+    width: 38%;
+
+    .svg-triangle {
+      left: -54px;
+
+    }
+
+  }
+
+  &__left {
+    top: 30.3%;
+    width: 39%;
+    left: 0;
+    text-align: right;
+
+    .svg-triangle {
+      right: -53px;
+      transform: rotate(180deg);
+    }
+
+  }
+
+  @media (max-width: 1200px) {
+    &__right {
+      width: 33.5%;
+      top: 49%;
+    }
+
+    &__left {
+      width: 34.5%;
+      top: 31%;
+    }
+  }
+
+  @media (max-width: 850px) {
+    &__left,
+    &__right {
+      font-size: 18px;
+    }
+
+    &__right {
+      top: 73%;
+      width: 48%;
+      transform: rotateX(-180deg);
+      padding-left: 20px;
+
+      &-text {
+        transform: rotateX(180deg);
+
+      }
+    }
+
+    &__left {
+      width: 48%;
+      top: 8%;
+      transform: rotateX(-180deg);
+      text-align: left;
+      padding-left: 20px;
+
+      &-text {
+        transform: rotateX(180deg);
+
+      }
+    }
+
+
   }
 }

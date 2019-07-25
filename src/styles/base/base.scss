@@ -108,26 +108,8 @@ p {
   }
 }
 
-img.lazyload {
-  filter: blur(2vw);
-  transform: scale(1.05);
-}
-
-.no-js img.lazy {
-  display: none;
-}
-
 .inline {
   background-size: auto !important;
-}
-
-.lazy-before {
-  height: 281px;
-  background-repeat: no-repeat;
-}
-
-.lazy-before.lazy-bg-loaded {
-  background-image: url(../images/man.jpg);
 }
 
 .sr-only {

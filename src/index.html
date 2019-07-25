@@ -16,101 +16,38 @@
 <body class="body">
 
 <!--start wrapper-->
-<div class="wrapper">
+<div class="wrapper js-wrapper">
 
-
+  <div class="wrapper__border"></div>
   @@include('header.html')
+  <div class="overlay"></div>
+  @@include('sidebar.html')
 
   <main class="main">
     <div class="container">
-      <div class="main__left">Соперник №1</div>
-      <div class="main__right">Соперник №2</div>
+      <div class="main__left">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle" width='100' height='100'>
+          <path d="M 55,10 90,90 10,90 z"></path>
+        </svg>
+        <div class="main__left-text js-rival-first"></div>
+      </div>
+      <div class="main__right">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle" width='100' height='100'>
+          <path d="M 55,10 90,90 10,90 z"></path>
+        </svg>
+        <div class="main__right-text js-rival-second"></div>
+      </div>
       <div class="slider">
         <div class="swiper-container swiper_event js-swiper-event">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="slider__item">
-                <div class="hexagon">
-                  <div class="hexagon__center">
-                    <div class="hexagon__figure">
-                      <div class="hexagon__date">30 <br> мая</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slider__item">
-                <div class="hexagon">
-                  <div class="hexagon__center">
-                    <div class="hexagon__figure">
-
-                      <div class="hexagon__date">17 <br> июня</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slider__item">
-                <div class="hexagon">
-                  <div class="hexagon__center">
-                    <div class="hexagon__figure">
-                      <div class="hexagon__active">
-                        <div class="hexagon__prop">Стадион</div>
-                        <div class="hexagon__big-date">26 июня</div>
-                        <div class="hexagon__time">19:00</div>
-                        <a class="hexagon__buy" href="">Купить билет</a>
-                      </div>
-                      <div class="hexagon__date">26 <br> июня</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slider__item">
-                <div class="hexagon">
-                  <div class="hexagon__center">
-                    <div class="hexagon__figure">
-                      <div class="hexagon__active">
-                        <div class="hexagon__prop">Стадион</div>
-                        <div class="hexagon__big-date">16 июля</div>
-                        <div class="hexagon__time">19:00</div>
-                        <a class="hexagon__buy" href="">Купить билет</a>
-                      </div>
-                      <div class="hexagon__date">16 <br> июля</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slider__item">
-                <div class="hexagon">
-                  <div class="hexagon__center">
-                    <div class="hexagon__figure">
-                      <div class="hexagon__date">30 <br> сентября</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
-
     </div>
   </main>
 
 </div>
 <!--end wrapper-->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="libs/jquery.min.js"><\/script>');</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
